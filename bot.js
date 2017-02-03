@@ -1,9 +1,9 @@
-let twit = require('twit');
-let snoowrap = require('snoowrap');
-var https = require('https');
-let fs = require('fs');
+var twit = require('twit');
 var twitConfig = require('./twit_config.js');
+var snoowrap = require('snoowrap');
 var redditConfig = require('./reddit_config.js');
+var https = require('https');
+var fs = require('fs');
 
 // Initialize Twitter
 var Twitter = new twit(twitConfig);
@@ -17,7 +17,6 @@ function postWallpaper() {
 	
 	// Fetch wallpaper
 	Reddit.getSubreddit('wallpapers').getHot()[randomPost].url.then(url => {
-		
 		var imageURL = './wallpapers/' + url.substring(url.length - 9, url.length - 1)
 
 		if (fs.existsSync(imageURL)) {
