@@ -1,0 +1,12 @@
+{
+  "name": "wallpaper_bot",
+  "version": "1.0.0",
+  "description": "Twitter bot that posts wallpapers daily",
+  "main": "bot.js",
+  "author": "Haven Barnes",
+  "license": "ISC",
+  "dependencies": {
+    "snoowrap": "^1.11.3",
+    "twit": "^2.2.5"
+  }
+}
