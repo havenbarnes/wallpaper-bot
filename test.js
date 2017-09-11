@@ -16,6 +16,7 @@ function postWallpaper() {
 	
 	// Fetch wallpaper
 	Reddit.getSubreddit('wallpapers').getHot()[randomPost].url.then(url => {
+		if (url == null) { console.log("url is null for some reason"); }
 		var imageURL = './wallpapers/' + url.substring(url.length - 9, url.length - 1)
 
 		if (fs.existsSync(imageURL)) {
@@ -68,6 +69,10 @@ function tweet(imageURL) {
 					console.log(data)
 				});
 			});
+		} else { 
+			console.log('image data null');
+			console.log(err);
+			console.log(response);
 		}
 	});		
 }
